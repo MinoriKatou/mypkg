@@ -27,9 +27,9 @@ Raspberry Pi 4 Model B x 1<br>
 
 ```bash
 cd
-$ mkdir -p catkin_ws/src
-$ cd ~/catkin_ws/src
-$ catkin_init_workspace
+mkdir -p catkin_ws/src
+cd ~/catkin_ws/src
+catkin_init_workspace
 ```
 
 .bashrcの下から三行目に以下の文を追加する．
