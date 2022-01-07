@@ -23,7 +23,44 @@ Raspberry Pi 4 Model B x 1<br>
 
 # Usage
 
-始めにROSを立ち上げる
+始めにディレクトリを作成する．
+
+```bash
+cd
+$ mkdir -p catkin_ws/src
+$ cd ~/catkin_ws/src
+$ catkin_init_workspace
+```
+
+.bashrcの下から三行目に以下の文を追加する．
+
+```bash
+source ~/catkin_ws/devel/setup.bash
+```
+
+環境をビルドする．
+
+```bash
+cd ~/catkin_ws
+catkin_make
+source ~/.bashrc
+```
+
+作成するパッケージ名、使用するライブラリを作成して指定する．
+
+```bash
+cd ~/catkin_ws/src
+catkin_create_pkg mypkg rospy
+```
+
+パッケージ内にscriptsというディレクトリを作成して，ノードとなるプログラムを置く．
+
+```bashcd mypkg/
+mkdir scripts
+cd scripts/
+```
+
+ROSを立ち上げる
 
 ```bash
 roscore
@@ -32,12 +69,14 @@ roscore
 以下のコマンドを実行．
 
 ```bash
+chmod +x count.py
 rosrun mypkg count.py
 ```
 
 新しくubuntuを開いて以下コマンドを実行．
 
 ```bash
+chmod +x twice.py
 rosrun mypkg twice.py
 ```
 
