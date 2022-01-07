@@ -62,6 +62,6 @@ make clean
 
 # License
 
-"myled" is under [GNU General Public License v2.0](https://www.gnu.org/licenses/).
+"myled" is under [BSD 3-Clause "New" or "Revised" License](https://www.gnu.org/licenses/).
 
 Thank you!
