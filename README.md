@@ -14,6 +14,7 @@ https://youtu.be/jjugRN7yZbM
 # Requirement
 
 * ubuntu 20.04.3
+* ROS
 * Rspberry Pi 4 Model B
 
 # tools
@@ -22,32 +23,31 @@ Raspberry Pi 4 Model B x 1<br>
 
 # Usage
 
-ディレクトリ内で以下のコマンドを実行．
+始めにROSを立ち上げる
 
 ```bash
-git clone https://github.com/hoge/~
-cd myled
-make
-sudo insmod myled.ko
-sudo chmod 666 /dev/myled0
+roscore
 ```
-以下コマンドで点灯
+
+以下のコマンドを実行．
 
 ```bash
-echo 1 > /dev/myled0
+rosrun mypkg count.py
 ```
 
-以下コマンドで消灯
+新しくubuntuを開いて以下コマンドを実行．
 
 ```bash
-echo 0 > /dev/myled0
+rosrun mypkg twice.py
 ```
 
-実行後のディレクトリの後処理は以下コマンド
+更に新しくubuntuを開いて以下コマンドを実行．
 
 ```bash
-make clean
+rostopic echo /twice
 ```
+
+実行後は全てctrl + Cで停止
 
 # Note
 
